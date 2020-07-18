@@ -9,4 +9,4 @@ Link : https://github.com/Psingh12354/TCS-Codevita-Solution/blob/master/Digit%20
 
 A big group of students, starting a long journey on different set of vehicles need to fill petrol in their vehicles. As group leader you are required to minimize the time they spend at the petrol pump to start the journey at the earliest. You will be given the quantity of petrol (in litres) that can be filled in each vehicle. There are two petrol vending machines at the petrol pump. You need to arrange the vehicles in such a way that they take shortest possible time to fill all the vehicles and provide the time taken in seconds as output. Machine vends petrol @ 1litre/second. Assume that there is no time lost between switching vehicles to start filling petrol.
 
-https://github.com/Psingh12354/TCS-Codevita-Solution/blob/master/Petrol%20Pump.cpp
+Link : https://github.com/Psingh12354/TCS-Codevita-Solution/blob/master/Petrol%20Pump.cpp

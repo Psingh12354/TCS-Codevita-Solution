@@ -85,3 +85,5 @@ At t = 5 -> c,f,e,d,a,b
 At t = 6 -> a,b,c,d,e,f
 
 Since at t = 6, we got the original position, therefore the answer is 6.
+
+Link : https://github.com/Psingh12354/TCS-Codevita-Solution/blob/master/GroovingMonkey.py

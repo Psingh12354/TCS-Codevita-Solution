@@ -1,3 +1,6 @@
+# In this these program you can pass the first level of test case but the issue is time. All three codes are not running in time so if anyone can fix it.
+# Thanks.
+
 # TCS-Codevita-Solution
 Here i have uploaded TCS Codevita Solutiom
 

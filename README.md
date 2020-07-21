@@ -10,9 +10,114 @@ Given N three-digit numbers, your task is to find bit score of all N numbers and
 
 Link : https://github.com/Psingh12354/TCS-Codevita-Solution/blob/master/Digit%20Pairs.c
 
+<h4><b> Source Code : <\b></h4>
+  
+```
+#include<stdio.h>
+void main()
+{
+int n,N,j,large=0,small=1000,remd,i,sum,Pairs=0;
+int numbers[500],bitScore[500];
+char tem;
+scanf("%d",&N);
+j=0;
+do {
+scanf("%d%c", &numbers[j], &tem);
+j++;
+} while(tem != '\n');
+for(j=0;j<N;j++)
+{
+n=numbers[j];
+large=0;
+small=1000;
+while (n > 0) {
+remd = n % 10;
+if (remd > large)
+{
+large = remd;
+}
+if (remd < small)
+{
+small = remd;
+}
+n /=10;
+}
+bitScore[j]=((large*11)+(small*7))%100;
+}
+for(i=1;i<9;i++)
+{
+sum=0;
+for(j=0;j<N;j=j+2)
+{
+n=bitScore[j]/10;
+if(n==i)
+sum++;
+}
+if(sum==2)
+Pairs++;
+else if(sum>=3)
+Pairs+=2;
+sum=0;
+for(j=1;j<N;j=j+2)
+{
+n=bitScore[j]/10;
+if(n==i)
+sum++;
+}
+if(sum==2)
+Pairs++;
+else if(sum>=3)
+Pairs+=2;
+}
+printf("%d", Pairs);
+}
+```
+
 A big group of students, starting a long journey on different set of vehicles need to fill petrol in their vehicles. As group leader you are required to minimize the time they spend at the petrol pump to start the journey at the earliest. You will be given the quantity of petrol (in litres) that can be filled in each vehicle. There are two petrol vending machines at the petrol pump. You need to arrange the vehicles in such a way that they take shortest possible time to fill all the vehicles and provide the time taken in seconds as output. Machine vends petrol @ 1litre/second. Assume that there is no time lost between switching vehicles to start filling petrol.
 
 Link : https://github.com/Psingh12354/TCS-Codevita-Solution/blob/master/Petrol%20Pump.cpp
+
+<h4><b> Source Code : <\b></h4>
+  
+```
+#include<iostream>
+#include <climits>    
+#include <sstream> 
+#include<vector>    
+using namespace std;
+int maxi = INT_MAX;
+int max(int a, int b)
+{ 
+    return (a > b)?a:b;
+}
+void Time(int total, int sum, int i, vector<int> v1)
+{  
+    if(max(sum, total-sum) < maxi)	
+    {		
+        maxi = max(sum, total-sum);	
+    } 
+    if(v1[i]) 
+        return; 
+    Time(total, sum + v1[i], i+1, v1); 
+    Time(total, sum, i+1, v1); 
+    return;
+}
+int main()
+{ 
+    int n, i = 1, sum=0;
+    string s;	
+    vector<int> v1; 
+    getline(cin, s, '\n');	
+    stringstream ss(s); 
+    while(ss>>n)	
+    {		
+        sum+=n;		
+        v1.push_back(n);	
+    } 
+    Time(sum, 0, 0, v1);	
+    cout<<maxi;
+}
+```
 
 Grooving Monkeys
 
@@ -90,3 +195,25 @@ At t = 6 -> a,b,c,d,e,f
 Since at t = 6, we got the original position, therefore the answer is 6.
 
 Link : https://github.com/Psingh12354/TCS-Codevita-Solution/blob/master/GroovingMonkey.py
+
+<h4><b> Source Code : <\b></h4>
+  
+```
+def Monkey(n):
+    x=n
+    x=[0]*len(n)
+    count=0
+    while(x!=n):
+        count+=1
+        x=[0]*len(n)
+        for i in range(len(n)):
+            x[a[i]-1]=y[i]
+        y=x
+    return count
+t=int(input())
+for i in range(t):
+    N=int(input())
+    Monkeys=list(map(int,input().split(' ')))
+    result=Monkey(Monkeys)
+    print(result)
+ ```
